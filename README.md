@@ -1,3 +1,6 @@
+# Demo
+Eine Demo der App ist unter https://svenfahrni.github.io/EpreLearningApp/ verfügbar.
+
 # EpreApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.9.
