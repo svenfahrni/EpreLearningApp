@@ -1,0 +1,31 @@
+<canvas #canvas></canvas>
+
+<div class="question container">
+
+  <!-- Header, Question 1/12, Points: 3 -->
+  <div class="infos py-4">
+    <span class="light">Frage {{ questionService.questionIndex + 1 }} / {{questionService.questions.length}} </span>
+    <mat-chip-list class="chip-list"><mat-chip>Punkte: {{questionService.score}}</mat-chip></mat-chip-list>
+  </div>
+  
+  <!--Question Text -->
+  <h1 class="question-text pt-1">{{currentQuestion.question}}</h1> <br>
+
+  <!--Answers -->
+  <div class="answers" [ngClass] ="{'shake': showWrongAnimation}">
+    <app-answer-number *ngIf="currentQuestion.type == 'number'" [solution]="currentQuestion.solution"></app-answer-number>
+    <app-answer-select-text *ngIf="currentQuestion.type == 'selecttext'" [answers]="currentQuestion.answers"></app-answer-select-text>
+  </div>
+  
+
+  <div class="py-4">
+    <button mat-raised-button color="primary" (click)="next()">Weiter</button>
+  </div>
+  
+
+</div>
+
+<div class="footer">
+  
+  <mat-progress-bar mode="determinate" [value]="questionService.progress"></mat-progress-bar>
+</div>

@@ -1,0 +1,3 @@
+<div class="grid" *ngFor="let answer of answers">
+  <button mat-stroked-button (click)="check($event, answer)"> {{ answer.label }} </button>
+</div>
